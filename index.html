@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page Simples</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Cabeçalho -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold">🚀 Meu Produto</h1>
+      <nav x-data="{ open: false }" class="relative">
+        <button class="md:hidden" @click="open = !open">☰</button>
+        <ul class="hidden md:flex gap-6 font-medium">
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <ul x-show="open" class="md:hidden absolute bg-white shadow-md right-0 mt-2 p-4 flex flex-col gap-2">
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-4 bg-gray-50">
+    <h2 class="text-4xl font-bold mb-4">Transforme seu negócio agora</h2>
+    <p class="text-lg mb-6">Soluções simples, resultados reais. Comece hoje.</p>
+    <a href="#contato" class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700 transition">
+      Quero saber mais
+    </a>
+  </section>
+
+  <!-- Benefícios -->
+  <section id="beneficios" class="max-w-5xl mx-auto py-16 px-4">
+    <h3 class="text-2xl font-bold mb-6 text-center">Benefícios</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h4 class="font-bold text-lg mb-2">Rápido</h4>
+        <p>Seu site pronto em poucos dias, sem complicações.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h4 class="font-bold text-lg mb-2">Responsivo</h4>
+        <p>Funciona em celulares, tablets e desktops.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow text-center">
+        <h4 class="font-bold text-lg mb-2">Fácil de editar</h4>
+        <p>Você mesmo pode atualizar o conteúdo com facilidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos" class="bg-gray-100 py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-6">O que dizem nossos clientes</h3>
+      <div class="space-y-8">
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          “Simplesmente incrível. Meu faturamento aumentou 30% em 2 semanas.”  
+          <footer class="mt-2 text-sm text-gray-500">– João M.</footer>
+        </blockquote>
+        <blockquote class="bg-white p-6 rounded-xl shadow">
+          “A landing page ficou moderna, rápida e converte bem!”  
+          <footer class="mt-2 text-sm text-gray-500">– Carla T.</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="max-w-3xl mx-auto py-16 px-4">
+    <h3 class="text-2xl font-bold mb-4 text-center">Fale conosco</h3>
+    <p class="mb-6 text-center">
+      Preencha o formulário abaixo e entraremos em contato o mais breve possível.
+    </p>
+    <form action="https://formsubmit.co/ti.andrefreitas@gmail.com" method="POST" class="space-y-4 bg-white p-6 rounded-xl shadow">
+      <!-- Campos invisíveis de configuração -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://obrigado.seusite.com"> <!-- ou deixe vazio -->
+      
+      <div>
+        <label for="nome" class="block font-medium mb-1">Nome</label>
+        <input type="text" id="nome" name="nome" required class="w-full border border-gray-300 p-3 rounded-md" />
+      </div>
+      <div>
+        <label for="email" class="block font-medium mb-1">E-mail</label>
+        <input type="email" id="email" name="email" required class="w-full border border-gray-300 p-3 rounded-md" />
+      </div>
+      <div>
+        <label for="mensagem" class="block font-medium mb-1">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required class="w-full border border-gray-300 p-3 rounded-md"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700 transition">
+          Enviar mensagem
+        </button>
+      </div>
+    </form>
+  </section>
+  <!-- Rodapé -->
+  <footer class="text-center py-6 bg-gray-200 text-sm text-gray-600">
+    © 2025 Meu Produto — Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
